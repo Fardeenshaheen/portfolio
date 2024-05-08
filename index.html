@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Resume Portfolio</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+			background-color: #f0f0f0;
+		}
+
+		.navbar {
+			background-color: #333;
+			overflow: hidden;
+			position: fixed;
+			top: 0;
+			width: 100%;
+			z-index: 1;
+		}
+
+		.navbar a {
+			float: left;
+			display: block;
+			color: #f2f2f2;
+			text-align: center;
+			padding: 14px 16px;
+			text-decoration: none;
+		}
+
+		.navbar a:hover {
+			background-color: #ddd;
+			color: black;
+		}
+
+		.main {
+			padding: 20px;
+			margin-top: 30px;
+			margin-bottom: 30px;
+			background-color: white;
+			border-radius: 5px;
+			box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+			margin-left: 15%;
+			margin-right: 15%;
+		}
+
+		.name {
+			text-align: center;
+			margin-top: 50px;
+			margin-bottom: 50px;
+			font-size: 3em;
+			color: #333;
+			text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+		}
+
+		.name:hover {
+			color: #f15a29;
+			text-shadow: 2px 2px 4px rgba(241, 90, 41, 0.5);
+		}
+
+		.section {
+			margin-bottom: 30px;
+		}
+
+		.section h2 {
+			margin-top: 30px;
+			margin-bottom: 10px;
+			color: #333;
+		}
+
+		.section p {
+			margin-bottom: 20px;
+			line-height: 1.5;
+		}
+
+		.skills {
+			display: flex;
+			flex-wrap: wrap;
+			margin-left: -10px;
+			margin-right: -10px;
+		}
+
+		.skill {
+			flex: 1 0 200px;
+			margin-left: 10px;
+			margin-right: 10px;
+			margin-bottom: 20px;
+			padding: 20px;
+			background-color: white;
+			border-radius: 5px;
+			box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+		}
+
+		.skill h3 {
+			margin-top: 0;
+			margin-bottom: 10px;
+			color: #333;
+		}
+
+		.skill p {
+			margin-bottom: 0;
+			color: #666;
+		}
+
+		.experience {
+margin-bottom: 30px;
+		}
+
+		.experience h3 {
+			margin-top: 0;
+			margin-bottom: 10px;
+			color: #333;
+		}
+
+		.experience p {
+			margin-bottom: 20px;
+			line-height: 1.5;
+		}
+
+		.project {
+			margin-bottom: 30px;
+		}
+
+		.project h3 {
+			margin-top: 0;
+			margin-bottom: 10px;
+			color: #333;
+		}
+
+		.project p {
+			margin-bottom: 20px;
+			line-height: 1.5;
+		}
+
+		.certification {
+			margin-bottom: 30px;
+		}
+
+		.certification h3 {
+			margin-top: 0;
+			margin-bottom: 10px;
+			color: #333;
+		}
+
+		.certification p {
+			margin-bottom: 20px;
+			line-height: 1.5;
+		}
+
+		.education {
+			margin-bottom: 30px;
+		}
+
+		.education h3 {
+			margin-top: 0;
+			margin-bottom: 10px;
+			color: #333;
+		}
+
+		.education p {
+			margin-bottom: 20px;
+			line-height: 1.5;
+		}
+
+		.references {
+			margin-bottom: 30px;
+		}
+
+		.references h3 {
+			margin-top: 0;
+			margin-bottom: 10px;
+			color: #333;
+		}
+
+		.references p {
+			margin-bottom: 20px;
+			line-height: 1.5;
+		}
+
+		.image-container {
+			text-align: center;
+			margin-top: 50px;
+			margin-bottom: 50px;
+		}
+
+		.image-container img {
+			width: 200px;
+			height: 200px;
+			border-radius: 50%;
+			object-fit: cover;
+			margin-bottom: 20px;
+		}
+
+		.splash-effect {
+			position: relative;
+		}
+
+		.splash-effect:hover::before {
+			content: attr(data-splash);
+			position: absolute;
+			top: -20px;
+			left: 0;
+			font-size: 18px;
+			font-weight: bold;
+			color: #f15a29;
+			opacity: 0;
+			transition: all 0.4s ease-in;
+			animation: splash-effect 0.5s forwards;
+		}
+        .download-button {
+            padding: 10px 20px;
+            border: none;
+            position: center;
+            background-color: #007bff; /* Blue color */
+            color: white;
+            font-size: 16px;
+            border-radius: 20px; /* Rounded corners */
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        /* Hover effect */
+        .download-button:hover {
+            background-color: #0056b3; /* Darker blue color */
+        }
+
+		@keyframes splash-effect {
+			0% {
+				opacity: 0;
+				transform: translateY(-10px);
+			}
+			100% {
+				opacity: 1;
+				transform: translateY(0);
+			}
+		}
+	</style>
+</head>
+<body>
+	<nav class="navbar">
+		<a href="#" class="splash-effect" data-splash="Home">Home</a>
+		<a href="#education" class="splash-effect" data-splash="Education">Education</a>
+		<a href="#skills" class="splash-effect" data-splash="Skills">Skills</a>
+		<a href="#experience" class="splash-effect" data-splash="Experience">Experience</a>
+		<a href="#projects" class="splash-effect" data-splash="Projects">Projects</a>
+		<a href="#certifications" class="splash-effect" data-splash="Certifications">Certifications</a>
+		<a href="#references" class="splash-effect" data-splash="References">References</a>
+	</nav>
+
+	<div class="main">
+		<div class="name">Fardeen Shaheen</div>
+        <center>
+        <div class="professional-details">
+            <h3>
+                <p><a >Kfardeen051@gmail.com</a></p>
+                <p>Phone: +918210189332</p>
+                <p>Address:  40 Futa
+                    Road, Shaheenbagh, New Delhi, 110025, India</p>
+            </h3>
+            </div>
+        </center>
+    
+
+		<div class="section" id="education">
+			<h2>EDUCATION & ACADEMIC ACHIEVEMENTS</h2>
+
+			<div class="education">
+				<h3>Bachelor of Commerce (B.Com)</h3>
+				<p>Mahamaya Technical University, 2022</p>
+			</div>
+
+			<div class="education">
+				<h3>Higher Secondary Education</h3>
+				<p>Rajasthan State Open School, 2019</p>
+			</div>
+
+			<div class="education">
+				<h3>Secondary Education</h3>
+				<p>Gyanasthali High School, Patna, Bihar, 2016</p>
+				<p>Overall score – 8.6 CGPA</p>
+			</div>
+            
+		</div>
+
+		<div class="section" id="skills">
+			<h2>Skills</h2>
+
+			<div class="skills">
+				<div class="skill">
+					<h3>Technical and Key Skills:</h3>
+					<p>Proficient with Advanced Excel (Formula Driven Automations)</p>
+					<p>CHATGPT Expert</p>
+					<p>Skilled in handling AI Tools</p>
+					<p>Professional presentation maker</p>
+					<p>Data Visualization (Python, Power BI, Tableau)</p>
+					<p>Business Acumen Mindset</p>
+				</div>
+
+				<div class="skill">
+					<h3>Work Experience:</h3>
+					<div class="experience">
+						<h4>AI Vocal Changer for a YouTuber</h4>
+						<p>Provided AI-based vocal modulation services for a prominent YouTuber, enhancing content quality and viewer engagement.</p>
+					</div>
+
+					<div class="experience">
+						<h4>Sales Executive, Indiamart</h4>
+						<p>Responsible for sales activities at Indiamart from November 2022 to June 2023.</p>
+						<ul>
+							<li>Engaged in facilitating business transactions between manufacturers, suppliers, and exporters by connecting them on the platform.</li>
+							<li>Actively participated in onboarding new clients and assisting them in leveraging the platform's features for maximum exposure and sales.</li>
+							<li>Cultivated and maintained strong relationships with clients to ensure their satisfaction and retention.</li>
+							<li>Implemented effective sales strategies to meet and exceed sales targets, contributing to the overall growth of the company.</li>
+							<li>Played a key role in expanding the customer base and increasing revenue during the tenure from November 2022 to June 2023.</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="section" id="experience">
+			<h2>Experience Highlights</h2>
+			<div class="experience">
+				<h3>AI Vocal Changer, Freelance</h3>
+				<p>Provided AI-based vocal modulation services for a prominent YouTuber, enhancing content quality and viewer engagement.</p>
+			</div>
+		</div>
+
+		<div class="section" id="projects">
+			<h2>Projects</h2>
+			<div class="project">
+				<h3>Business Data Analysis Project</h3>
+				<p>Conducted comprehensive data analysis using Python and Power BI to identify key trends and insights, aiding strategic decision-making for a local business.</p>
+			</div>
+		</div>
+
+		<div class="section" id="certifications">
+			<h2>Certifications</h2>
+			<div class="certification">
+				<h3>Advanced Excel Certification</h3>
+			</div>
+			<div class="certification">
+				<h3>CHATGPT Expert Certification</h3>
+			</div>
+		</div>
+
+		<div class="section" id="references">
+			<h2>References</h2>
+			<p>Available upon request.</p>
+		</div>
+        <a href="Fardeen Shaheen (1).pdf" download>
+            <button class="download-button">Download Resume</button>
+
+	
+	</div>
+</body>
+</html>
